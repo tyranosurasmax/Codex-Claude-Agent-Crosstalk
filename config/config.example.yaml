@@ -1,0 +1,26 @@
+# Codex-Claude-Agent-Crosstalk Configuration Example
+# Copy this file to config.yaml and update with your settings
+
+claude:
+  api_key: "your-claude-api-key-here"
+  model: "claude-3-sonnet"
+  max_tokens: 4000
+  temperature: 0.1
+
+codex:
+  api_key: "your-openai-api-key-here"  
+  model: "code-davinci-002"
+  max_tokens: 2000
+  temperature: 0.1
+
+templates:
+  directory: "templates/"
+  default_language: "python"
+
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+output:
+  directory: "output/"
+  overwrite: false
