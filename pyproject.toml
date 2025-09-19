@@ -1,0 +1,77 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "codex-claude-agent-crosstalk"
+version = "0.1.0"
+description = "A powerful integration tool that combines Claude Desktop/Code capabilities with Codex to streamline full project creation and development workflows"
+readme = "README.md"
+license = {file = "LICENSE"}
+authors = [
+    {name = "Codex-Claude-Agent-Crosstalk Team", email = "contact@example.com"}
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: GNU Affero General Public License v3",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Software Development :: Code Generators",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "pydantic>=2.0.0",
+    "pyyaml>=6.0",
+    "click>=8.0.0",
+    "colorama>=0.4.6",
+    "rich>=13.0.0",
+    "jinja2>=3.1.0",
+]
+
+[project.optional-dependencies]
+ai = [
+    # "anthropic>=0.7.0",  # Uncomment when API keys are available
+    # "openai>=1.0.0",     # Uncomment when API keys are available
+]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "black>=23.0.0",
+    "flake8>=6.0.0",
+    "mypy>=1.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/tyranosurasmax/Codex-Claude-Agent-Crosstalk"
+Repository = "https://github.com/tyranosurasmax/Codex-Claude-Agent-Crosstalk"
+Issues = "https://github.com/tyranosurasmax/Codex-Claude-Agent-Crosstalk/issues"
+
+[project.scripts]
+codex-claude-crosstalk = "codex_claude_crosstalk.cli.main:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["codex_claude_crosstalk*"]
+
+[tool.black]
+line-length = 100
+target-version = ['py38']
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "--strict-markers --asyncio-mode=auto"

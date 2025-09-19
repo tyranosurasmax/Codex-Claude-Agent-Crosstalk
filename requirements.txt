@@ -1,0 +1,21 @@
+# Core dependencies
+pydantic>=2.0.0
+pyyaml>=6.0
+click>=8.0.0
+
+# AI/ML dependencies
+# Note: These would be uncommented and properly configured in a real implementation
+# anthropic>=0.7.0  # For Claude API
+# openai>=1.0.0     # For OpenAI/Codex API
+
+# Development dependencies
+pytest>=7.0.0
+pytest-asyncio>=0.21.0
+black>=23.0.0
+flake8>=6.0.0
+mypy>=1.0.0
+
+# Optional dependencies for enhanced functionality
+colorama>=0.4.6
+rich>=13.0.0
+jinja2>=3.1.0
